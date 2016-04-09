@@ -1,0 +1,27 @@
+startup_message off                                                               
+term linux                                                                        
+
+defscrollback 40960                                                               
+hardstatus alwayslastline                                                         
+
+
+shelltitle "$|bash"                                                               
+
+
+vbell off                                                                         
+
+bind w windowlist -b                                                              
+bind ^w windowlist -b                                                             
+
+
+screen                                                                            
+screen                                                                            
+select 0                                                                          
+
+escape ^aa  
+
+attrcolor u "-u B"                                                                
+autodetach on                                                                     
+
+
+hardstatus string '%{= kG}[ %{G}%c:%s %{g} ][%= %{= kw}%?%-Lw%?%{Y}%n*%f%t %{K}%?%+Lw%?%= %{kG}][ %{C} %{kg} ][%{kG} %l %Y/%m/%d %{kG}]'  

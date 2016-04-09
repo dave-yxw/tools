@@ -34,7 +34,7 @@ Bundle 'winmanager'
 Bundle 'taglist.vim'
 Bundle 'bufexplorer.zip'
 Bundle 'OmniCppComplete'
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'fholgado/minibufexpl.vim'
 
