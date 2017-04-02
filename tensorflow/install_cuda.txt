@@ -19,11 +19,11 @@ add compile opt option:
 	# .whl 文件的实际名字与你所使用的平台有关
 	fn=`ls /tmp/tensorflow_pkg/tensorflow-*.whl`
 	pip install /tmp/tensorflow_pkg/$fn
-
+there is still a problem when run a multi-thread program with gpu.
 
 
 install opencv: http://docs.opencv.org/2.4/doc/tutorials/introduction/linux_install/linux_install.html
 git clone code from github
 failed if cmake directly, because of download ippxxx package failed. modify 3rdparty/ippicv/ippicv.cmake, complement some running code
-
+compile opencv with no cuda. if use cuda, tf with opencv will raise some initialize problem in cuda
 
