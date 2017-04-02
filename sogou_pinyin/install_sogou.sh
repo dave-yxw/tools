@@ -9,5 +9,5 @@ sudo dpkg -i sogoupinyin_*.deb
 # open system settings -> language support
   # choose fcitx
   # reboot system
-  # add new input_method: sogou by click input_icon -> config
+  # add new input_method: sogou by click input_icon on top-right bar -> config
   # shotcut key: ctrl + shirt  
