@@ -1,0 +1,29 @@
+verify the type of nvidia gpu: lspci | grep -i nvidia
+
+close uefi secure boot mode, don't know how
+
+http://blog.csdn.net/u010837794/article/details/63251725
+install driver, download .run from nvidia web, --no-opengl-files. compile example and run: deviceQuery to verify
+install cuda 8.0: download .run file from nvidia web
+install cudnn: the site from tf install guide is deprecated, enter the download page by search
+    different version cudnn is not compatible
+    the version should be compatible with cuda version. ie cudnn-8.--linux-x64-vxx.tgz for cuda-8.0 
+    
+install tensorflow with gpu:
+sometimes cuda/cudnn version can't be detected exactly, so input the version exactly when config
+add compile opt option: 
+	bazel build -c opt --copt=-mavx --copt=-mavx2 --copt=-mfma --copt=-mfpmath=both --copt=-msse4.2 --config=cuda //tensorflow/cc:tutorials_example_trainer
+	bazel-bin/tensorflow/cc/tutorials_example_trainer --use_gpu | head
+	bazel build -c opt --copt=-mavx --copt=-mavx2 --copt=-mfma --copt=-mfpmath=both --copt=-msse4.2 --config=cuda //tensorflow/tools/pip_package:build_pip_package
+	bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+	# .whl 文件的实际名字与你所使用的平台有关
+	fn=`ls /tmp/tensorflow_pkg/tensorflow-*.whl`
+	pip install /tmp/tensorflow_pkg/$fn
+
+
+
+install opencv: http://docs.opencv.org/2.4/doc/tutorials/introduction/linux_install/linux_install.html
+git clone code from github
+failed if cmake directly, because of download ippxxx package failed. modify 3rdparty/ippicv/ippicv.cmake, complement some running code
+
+
