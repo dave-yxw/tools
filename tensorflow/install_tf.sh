@@ -1,3 +1,4 @@
+#!/bin/bash
 ./configure
 
 bazel build -c opt --copt=-mavx --copt=-mavx2 --copt=-mfma --copt=-mfpmath=both --copt=-msse4.2 --config=cuda //tensorflow/cc:tutorials_example_trainer
